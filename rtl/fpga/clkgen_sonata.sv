@@ -10,8 +10,8 @@ module clkgen_sonata (
 );
   logic locked_pll;
   logic io_clk_buf;
-  logic clk_50_buf;
-  logic clk_50_unbuf;
+  logic clk_25_buf;
+  logic clk_25_unbuf;
   logic clk_fb_buf;
   logic clk_fb_unbuf;
 
@@ -34,7 +34,7 @@ module clkgen_sonata (
     .CLKIN1_PERIOD        (40.000)
   ) pll (
     .CLKFBOUT            (clk_fb_unbuf),
-    .CLKOUT0             (clk_50_unbuf),
+    .CLKOUT0             (clk_25_unbuf),
     .CLKOUT1             (),
     .CLKOUT2             (),
     .CLKOUT3             (),
@@ -66,13 +66,13 @@ module clkgen_sonata (
     .O (clk_fb_buf)
   );
 
-  BUFG clk_50_bufg (
-    .I (clk_50_unbuf),
-    .O (clk_50_buf)
+  BUFG clk_25_bufg (
+    .I (clk_25_unbuf),
+    .O (clk_25_buf)
   );
 
   assign IO_CLK_BUF = io_clk_buf;
 
   // Clock output
-  assign clk_sys = clk_50_buf;
+  assign clk_sys = clk_25_buf;
 endmodule
