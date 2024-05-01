@@ -90,7 +90,7 @@ module top_sonata (
   end
 
   sonata_system #(
-    .SysClkFreq   ( 25_000_000   ),
+    .SysClkFreq   ( 40_000_000   ),
     .GpiWidth     ( 13           ),
     .GpoWidth     ( 12           ),
     .PwmWidth     (  0           ),

@@ -28,7 +28,7 @@ set_property -dict { PACKAGE_PIN A11 IOSTANDARD LVCMOS33 } [get_ports {usrLed[5]
 set_property -dict { PACKAGE_PIN F13 IOSTANDARD LVCMOS33 } [get_ports {usrLed[6]}];
 set_property -dict { PACKAGE_PIN F14 IOSTANDARD LVCMOS33 } [get_ports {usrLed[7]}];
 
-set_output_delay -clock mainClk 0.000 [get_ports usrLed]
+# set_output_delay -clock mainClk 0.000 [get_ports usrLed]
 
 ## User JTAG (marked as USR_JTAG on schematic)
 ## PCB revision 0.3 and above
